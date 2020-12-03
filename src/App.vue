@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" class="row container-fluid m-0 p-0">
+        <div class="col-6 m-0 p-0">
+            <products-display />
+        </div>
+        <div class="col-6 m-0 p-0">
+            <product-editor />
+        </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ProductsDisplay from './components/ProductsDisplayComponent';
+import ProductEditor from './components/ProductEditorComponent';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        ProductsDisplay,
+        ProductEditor
+    },
+    data() {
+        return {
+        }
+    },
+    computed: {
+    },
+    methods: {
+    }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
