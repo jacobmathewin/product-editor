@@ -13,13 +13,22 @@
                 <td class="text-left">{{ p.name }}</td>
                 <td class="text-right">{{ p.price }}</td>
                 <td>
-                    <a href="#" class="btn-sm btn-primary" @click="editProduct(p)">Edit</a> 
-                    <a href="#" class="btn-sm btn-outline-danger ml-2" @click="deleteProduct(p.id)">Delete</a>
+                    <a href="#" class="btn btn-sm btn-outline-primary" @click="editProduct(p)">
+                        <font-awesome-icon :icon="['fas', 'edit']" />    
+                        Edit
+                    </a> 
+                    <a href="#" class="btn btn-sm btn-outline-danger ml-2" @click="deleteProduct(p.id)">
+                        <font-awesome-icon :icon="['fas', 'trash']" />    
+                        Delete
+                    </a>
                 </td>
             </tr>
         </table>
         <br />
-        <button class="btn btn-sm btn-primary" @click="addProduct()">Add Product</button>
+        <button class="btn btn-sm btn-outline-primary" @click="addProduct()">
+            <font-awesome-icon :icon="['fas', 'plus']" />
+            Add Product
+        </button>
     </div>
 </template>
 
@@ -28,6 +37,9 @@
 import {mapState} from 'vuex';
 
 export default {
+    components: {
+        
+    },
     data: function() {
         return {
 

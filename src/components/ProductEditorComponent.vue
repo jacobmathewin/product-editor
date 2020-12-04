@@ -12,8 +12,12 @@
             </div>
             <div class="row p-2">
                 <div class="col-12 text-center">
-                    <button class="btn btn-sm btn-primary" @click="saveOperation()">Save</button> &nbsp;
-                    <button class="btn btn-sm btn-secondary" @click="cancelOperation()">Cancel</button>
+                    <button class="btn btn-sm btn-outline-primary" @click="saveOperation()">
+                        <font-awesome-icon :icon="['fas', 'save']" /> Save
+                    </button> &nbsp;
+                    <button class="btn btn-sm btn-outline-secondary" @click="cancelOperation()">
+                        <font-awesome-icon :icon="['fas', 'times-circle']" /> Cancel
+                    </button>
                 </div>
             </div>
         </template>

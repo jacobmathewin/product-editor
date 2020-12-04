@@ -1,5 +1,5 @@
 {
-  "name": "nomagic",
+  "name": "product-editor",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "2",
     "bootstrap": "4.0.0",
     "core-js": "^3.6.5",
     "json-server": "^0.16.3",
@@ -35,7 +38,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",
