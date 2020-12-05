@@ -5,11 +5,11 @@
             <form action="#" method="get" @submit="saveOperation()">
                 <div class="row p-2">
                     <div class="col-4 text-right">Name</div>
-                    <div class="col-6"><input type="text" v-model="$v.product.name.$model"></div>
+                    <div class="col-6"><input type="text" v-model="$v.product.name.$model" v-bind:class="inputClasses.name"></div>
                 </div>
                 <div class="row p-2">
                     <div class="col-4 text-right">Price</div>
-                    <div class="col-6"><input type="text" v-model="$v.product.price.$model"></div>
+                    <div class="col-6"><input type="text" v-model="$v.product.price.$model" v-bind:class="inputClasses.price"></div>
                 </div>
                 <div class="row p-2">
                     <div class="col-12 text-center">
@@ -46,8 +46,8 @@ export default {
     inject: ['eventBus'],
     methods: {
         edit(product) {
-            this.product = {};
             this.mode = 'edit';
+            this.product = {};
             Object.assign(this.product, product);
         },
         cancelOperation() {
@@ -59,7 +59,7 @@ export default {
             console.log('save ...'+this.$v.$invalid);
             if(!this.$v.$invalid) {
                 if(this.mode=='edit') {
-                    this.eventBus.$emit('saveProductChanges', this.product);
+                    this.$store.commit("updateProduct", this.product);
                 } else {
                     this.product.id = this.$store.getters.nextProductID;
                     this.$store.commit("addNewProduct", this.product);
@@ -82,6 +82,12 @@ export default {
                 return 'Create Product';
             else
                 return '';
+        },
+        inputClasses() {
+            return {
+                name: this.$v.product.name.$invalid ? ['invalid'] : [],
+                price: this.$v.product.price.$invalid ? ['invalid'] : []
+            }
         }
     },
     created() {
@@ -90,3 +96,14 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .invalid {
+        border: 1px solid red;
+    }
+
+    .invalid:focus {
+        border: 1px solid red;
+        outline: red;
+    }
+</style>

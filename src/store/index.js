@@ -23,6 +23,10 @@ export default new Vuex.Store({
         deleteProduct(currentState, id) {
             let index = currentState.products.findIndex(p => id == p.id);
             currentState.products.splice(index, 1);
+        },
+        updateProduct(currentState, product) {
+            let index = currentState.products.findIndex(p => product.id == p.id);
+            console.log(index);
         }
     },
     getters: {
