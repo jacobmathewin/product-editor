@@ -1,25 +1,9 @@
-# nomagic
+VueJS App - without Routing
+http://product-editor.orangetreesoft.com
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# product-editor
+- Components
+- Vuex data store
+- FontAwesome
+- eventBus for cross app messaging
+- Vuelidate form validation
+- Saving data to localStorage
