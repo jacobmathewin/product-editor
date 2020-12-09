@@ -26,7 +26,7 @@ export default new Vuex.Store({
         },
         updateProduct(currentState, product) {
             let index = currentState.products.findIndex(p => product.id == p.id);
-            console.log(index);
+            Vue.set(currentState.products, index, product);
         }
     },
     getters: {
